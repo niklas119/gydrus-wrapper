@@ -34,12 +34,17 @@ public class Main {
         }
 
         for (WhitelistEntry entry : gydrus.getWhitelist()) {
-            System.out.format("%-15s created at %s for %s\n", entry.getIp(), entry.getDate(), entry.getOwnerName());
+            System.out.format("%-15s created at %s for %s\n",
+	    	entry.getIp(),
+		entry.getDate(),
+		entry.getOwnerName());
         }
 
         ServerMonitors monitors = gydrus.getMonitors();
         for (ServerMonitor monitor : monitors) {
-            System.out.format("%-15s running %-2s accounts\n", monitor.getIp(), monitor.getActive());
+            System.out.format("%-15s running %-2s accounts\n",
+	    	monitor.getIp(),
+		monitor.getActive());
         }
 
         Credentials credentials = gydrus.getCredentials();
@@ -52,7 +57,10 @@ public class Main {
 
         for (DashboardAccount account : list) {
             AccountInfo info = credentials.find(account.getId());
-            System.out.format("%s:%s:%s\n", info.getRegion(), info.getUsername(), info.getPassword());
+            System.out.format("%s:%s:%s\n",
+	    	info.getRegion(),
+		info.getUsername(),
+		info.getPassword());
         }
 
         AbstractCallback callback = new AbstractCallback() {
