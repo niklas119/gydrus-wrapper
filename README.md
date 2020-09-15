@@ -27,7 +27,9 @@ public class Main {
         for (HistoryEntry entry : gydrus.getHistory()) {
             System.out.format("%-24s at %s\n", entry.getDate(), entry.getTitle());
             for (HistoryModification modification : entry.getHistoryModifications()) {
-                System.out.format("\t%4s %s\n", modification.getRegion().toUpperCase(), modification.getName());
+                System.out.format("\t%4s %s\n",
+			modification.getRegion().toUpperCase(),
+			modification.getName());
             }
         }
 
