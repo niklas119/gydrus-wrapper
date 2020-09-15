@@ -7,7 +7,7 @@ public class DashboardAccountEditor extends JSONObject {
 
     private JSONObject object = new JSONObject();
 
-    public DashboardAccountEditor(DashboardAccount account) {
+    public DashboardAccountEditor(FullDashboardAccount account) {
         JSONArray array = new JSONArray();
         array.put(account.getId());
         put("ids", array);
@@ -31,6 +31,26 @@ public class DashboardAccountEditor extends JSONObject {
         setCurrentLevel(account.getCurrentLevel());
         setGamesInSession(account.getGamesInSession());
         setNextLevelPercentage(account.getNextLevelPercentage());
+        setSummonerNameTaken(account.isSummonerNameTaken());
+        setFlashOn(account.getFlashOn());
+        setLimitResources(account.getLimitResources());
+        setCompleteAllMissions(account.isCompleteAllMissions());
+        setMissionTracker(account.getMissionTracker());
+        setMode(account.getMode());
+        setBlackWhiteListChamp(account.getBlackWhiteListChamp());
+        setShowOnDashboard(account.isShowOnDashboard());
+        setDisenchantEmblems(account.isDisenchantEmblems());
+        setSkipTutorial(account.isSkipTutorial());
+        setSkipIfName(account.isSkipIfNameTaken());
+        setDisenchantFragment(account.isDisenchantFragChamps());
+        setKillExplorer(account.isKillExplorer());
+        setDisenchantChampion(account.isDisenchantFullChamps());
+        setRandomLane(account.isRandomLanes());
+        setMaxGames(account.getMaxGames());
+        setIconID(account.getIcon());
+        setStopBE(account.getDesiredBE());
+        setMissions(account.getMissions());
+        setStatus(account.getStatus());
     }
 
     private void setIP(String ip) {
@@ -69,8 +89,8 @@ public class DashboardAccountEditor extends JSONObject {
         object.put("completeMissionUntil", String.valueOf(missionUntil));
     }
 
-    private void setLimitResources(double resourceLimit) {
-        object.put("limitResources", String.valueOf(resourceLimit));
+    private void setLimitResources(String resourceLimit) {
+        object.put("limitResources", resourceLimit);
     }
 
     private void setCompleteAllMissions(boolean completeAllMissions) {

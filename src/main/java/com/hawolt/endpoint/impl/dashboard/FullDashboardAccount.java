@@ -14,6 +14,7 @@ public class FullDashboardAccount {
     private JSONObject blackWhiteListChamp, missionTracker, missions;
 
     public FullDashboardAccount(JSONObject object) {
+        object = object.getJSONObject("data");
         this.object = object;
         this.blackWhiteListChamp = object.getJSONObject("blackWhiteListChamp");
         this.missionTracker = object.getJSONObject("missionTracker");
@@ -55,6 +56,10 @@ public class FullDashboardAccount {
         this.skipIfNameTaken = object.getBoolean("skipIfNameTaken");
         this.skipTutorial = object.getBoolean("skipTutorial");
         this.completeAllMissions = object.getBoolean("completeAllMissions");
+    }
+
+    public DashboardAccount getAccount() {
+        return new DashboardAccount(object);
     }
 
     JSONObject getObject() {
