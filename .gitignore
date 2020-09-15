@@ -1,0 +1,6 @@
+.idea/*
+GydrusAPI.iml
+target/*
+test.json
+tmp.txt
+src/test/*
